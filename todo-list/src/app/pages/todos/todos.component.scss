@@ -1,0 +1,52 @@
+.todos {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     height: 100%;
+     width: 100%;
+
+     &-title {
+          font-size: 26px;
+          margin-bottom: 20px;
+          color: rgb(85, 12, 105);
+     }
+
+     &-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          max-width: 600px;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          background-color: #fff;
+     }
+}
+
+.btn-add {
+     display: flex;
+     justify-content: end;
+     width: 100%;
+}
+
+.lists {
+     & ul li {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 15px;
+
+          & p {
+               padding: 0;
+               margin: 0;
+               font-size: 15px;
+          }
+
+          & small {
+               font-size: 12px;
+               color: #999;
+          }
+     }
+}

@@ -1,0 +1,26 @@
+<!--[class.status]="currentStatus==='online'"  -->
+<!-- [style.fontSize]="10px" -->
+
+<div [class]="{
+     'status': true,
+     'status-online': currentStatus === 'online',
+     'status-offline': currentStatus === 'offline',
+     'status-unknown': currentStatus ==='unknown'
+}" [style]="{
+     'border-color': currentStatus === 'online' ? '#00FF00' : currentStatus === 'offline' ? '#FF0000' : '#000000',
+     'padding': '20px',
+     'border':'1px solid',
+     'border-radius': '5px',
+   
+}">
+     @if (currentStatus === 'online') {
+     <p>Servers are online</p>
+     <p>All systems are operational.</p>
+     } @else if (currentStatus === 'offline') {
+     <p>Servers are offline</p>
+     <p>Functionality should be restored soon.</p>
+     } @else {
+     <p>Server status is unknown</p>
+     <p>Fetching server status failed.</p>
+     }
+</div>

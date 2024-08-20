@@ -1,0 +1,47 @@
+<p-toast position="bottom-right" />
+<p-confirmDialog />
+<main class="todos">
+     <div class="todos-content">
+          <h1 class="todos-title">Simple Todos</h1>
+          <div style="width: 100%;">
+               <div class="btn-add">
+                    <p-button size="small" [outlined]="true" severity="info" (onClick)="onOpenAdd()" label="Add Todo" />
+               </div>
+               <app-add-todo [visible]="isOpenDiaAdd" (visibleChange)="onVisibleChange($event)" />
+               <div class="lists">
+                    <ul>
+                         @if (todos.length>0) {
+                         @for (todo of todos; track todo.id) {
+                         <li>
+                              <div>
+                                   <p>{{todo.title}}</p>
+                                   <small>
+                                        {{todo.startDate | date:'shortDate'}}
+                                   </small>
+                                   <small> - </small>
+                                   <small>
+                                        {{todo.endDate | date:'shortDate'}}
+                                   </small>
+                              </div>
+                              <div>
+                                   <p-button (onClick)="onOpenEdit(todo)" size="small" [text]="true" severity="success"
+                                        label="Edit" />
+                                   <p-button (onClick)="onOpenDelete($event, todo)" size="small" [text]="true"
+                                        severity="danger" label="Delete" />
+                              </div>
+                         </li>
+                         }
+                         }@else {
+                         <li>
+                              <div>
+                                   <p>No todos found</p>
+                              </div>
+                         </li>
+                         }
+                    </ul>
+               </div>
+               <app-edit-todo [visible]="isOpenDiaEdit" (visibleChange)="onVisibleChange($event)"
+                    [todoEdit]="selectedTodo" />
+          </div>
+     </div>
+</main>

@@ -1,0 +1,35 @@
+<p-toast position="bottom-right" />
+<p-dialog header="Edit Todo" [modal]="true" [(visible)]="visible" [style]="{ width: '40rem' }" (onHide)="closeDialog()">
+     <span class="p-text-secondary block mb-5">
+          What do you have today?
+     </span>
+     <form (ngSubmit)="onSubmit()" class="form">
+          <div class="input-wrap">
+               <label for="enteredTitle">Title</label>
+               <input name="enteredTitle" [(ngModel)]="enteredTitle" pInputText id="enteredTitle" />
+          </div>
+          <div class="input-wrap">
+               <label for="enteredSummary">Summary</label>
+               <textarea id="enteredSummary" name="enteredSummary" [(ngModel)]="enteredSummary" rows="4" cols="30"
+                    pInputTextarea>
+                </textarea>
+          </div>
+
+          <div class="input-wrap">
+               <label for="enteredStartDate">Start Date</label>
+               <p-calendar id="enteredStartDate" [(ngModel)]="enteredStartDate" name="enteredStartDate"
+                    [iconDisplay]="'input'" [showIcon]="true" inputId="icondisplay" />
+          </div>
+          <div class="input-wrap">
+               <label for="enteredEndDate">End Date</label>
+               <p-calendar id="enteredEndDate" [(ngModel)]="enteredEndDate" name="enteredEndDate"
+                    [iconDisplay]="'input'" [showIcon]="true" inputId="icondisplay" />
+          </div>
+
+          <div class="btn-wrap">
+               <p-button size="small" type="button" label="Cancel" severity="secondary" [outlined]="true"
+                    (onClick)="visible = false" />
+               <p-button type="submit" size="small" label="Save" (onClick)="visible = false" />
+          </div>
+     </form>
+</p-dialog>

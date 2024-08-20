@@ -1,0 +1,15 @@
+.group {
+    & input {
+        width: 100%;
+        border-radius: 6px;
+    }
+
+    & small {
+        display: block;
+        margin-left: 5px;
+        margin-top: 4px;
+        height: 16px;
+        color: rgb(219, 72, 43);
+    }
+
+}

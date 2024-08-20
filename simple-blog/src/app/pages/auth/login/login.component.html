@@ -1,0 +1,15 @@
+<app-auth-layout>
+    <div class="container">
+        <h2>Login with email</h2>
+        <app-input-auth name="email" label="Email" />
+        <app-input-auth type="password" name="password" label="Password" />
+        <div class="button">
+            <app-button label="Login Now" />
+        </div>
+
+        <p>
+            You don't have an account? <a routerLink="/auth/register">Register</a>
+        </p>
+
+    </div>
+</app-auth-layout>
